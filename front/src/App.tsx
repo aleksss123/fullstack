@@ -8,6 +8,7 @@ import Modal from "./components/Modal/Modal";
 import Meme from "./components/Memes/Meme";
 import Board from "./components/Board/Board";
 import Header from "./components/Header/Header";
+import MemeCreate from "./components/MemeCreate";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
@@ -54,22 +55,13 @@ function App() {
     );
   }
 
-  const memes = {
-    id: 1,
-    name: "Jerry cringed",
-    description: "nice meme lmao",
-    tags: "animals",
-    owner: 1
-  };
-
   return (
     <Router>
       <Context.Provider value={{ removeTodo }}>
         <div className="wrapper">
           <Header />
-          <Meme {...memes} />
           <Route path="/all" component={Board} />
-          <Route path="/meme" component={Meme} />
+          <Route path="/create-meme/" component={MemeCreate} />
           <section>
             <Modal />
             <AddTodo onCreate={addTodo} />

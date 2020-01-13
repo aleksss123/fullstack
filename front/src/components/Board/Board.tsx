@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import meme_img from "../../assets/jerry_meme.jpg";
 import Meme from "../Memes/Meme";
+import { IMeme } from '../../types/meme'
 
 const memesList = [
   {
@@ -21,14 +22,20 @@ const memesList = [
 ];
 
 const Board: React.FC = () => {
+  const [memes, setMemes] = React.useState<IMeme[]>([]) as any;
+
+  React.useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/memes/")
+      .then(response => response.json())
+      .then(memes => setMemes(memes))
+  }, [])
+
   return (
     <section className="board">
-      {memesList.map((meme, index) => (
-        <Link to="/meme">
-          <div className="board-meme">
-            <Meme key={meme.id} {...meme} />
-          </div>
-        </Link>
+      {memes.map((meme, index) => (
+        <div className="board-meme">
+          <Meme key={index} {...meme} />
+        </div>
       ))}
     </section>
   );
