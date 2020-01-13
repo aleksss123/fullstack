@@ -3,7 +3,6 @@ import meme_pic from "../../assets/jerry_meme.jpg";
 import { IMeme } from '../../types/meme'
 
 const Meme: React.FC<IMeme> = props => {
-
   return (
     <section>
       <h2 className="meme-title">{props.name}</h2>

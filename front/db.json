@@ -1,0 +1,26 @@
+{
+  "mememes": [
+    {
+      "id": 1,
+      "name": "jerry",
+      "description": "kekekkekek"
+    }
+  ],
+  "mememes2": [
+    {
+      "id": 1,
+      "name": "Jerry cringed",
+      "description": "cringe meme from backend, redacted by api user"
+    },
+    {
+      "id": 2,
+      "name": "Philosoraptor",
+      "description": "backend meme 2"
+    },
+    {
+      "id": 3,
+      "name": "meme3",
+      "description": "to be or not to be"
+    }
+  ]
+}
